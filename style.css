@@ -1,0 +1,43 @@
+*{box-sizing:border-box}
+:root{--vermelho:#c8102e;--vermelho2:#970019;--preto:#171717;--fundo:#f4f1f1;--branco:#fff;--texto:#222}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+header{height:66px;background:var(--preto);color:white;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:4px solid var(--vermelho)}
+.marca{font-size:27px;font-weight:bold;color:white;text-decoration:none}.marca span{color:#ed1c3b}
+nav{display:flex;gap:25px}nav a{color:white;text-decoration:none;font-size:14px}nav a:hover{color:#ff647b}
+button{font:inherit;cursor:pointer}
+#themeToggle{background:var(--vermelho);color:white;border:0;padding:8px 12px;border-radius:4px}
+.inicio{background:var(--vermelho);color:white;padding:38px 9%;display:flex;align-items:center;justify-content:space-between;gap:35px;min-height:410px}
+.intro{max-width:560px}.pequeno{font-size:13px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(48px,7vw,76px);line-height:.98;margin:12px 0}h1 span{color:#222}
+.intro>p:not(.pequeno){font-size:18px}
+.destaque{background:#fff;color:#222;padding:9px 12px;display:inline-block;font-weight:bold}
+.foto-principal{width:270px;height:330px;object-fit:cover;object-position:center 25%;border:7px solid white;box-shadow:7px 7px 0 #7e0015;transform:rotate(2deg)}
+.botao{display:inline-block;background:#202020;color:white;border:0;text-decoration:none;padding:11px 17px;font-weight:bold;border-radius:3px}
+.botao:hover{background:var(--vermelho2)}
+.sobre,.gostos,.quiz{max-width:1000px;margin:0 auto;padding:28px 7%}
+h2{font-size:29px;margin:0 0 10px;color:var(--vermelho)}
+.sobre>p{font-size:17px;margin:0 0 16px}
+.linha-info{display:flex;flex-wrap:wrap;gap:9px}.linha-info span{background:white;border:1px solid #ddd;padding:7px 11px;border-radius:3px}
+.gostos{padding-top:12px;padding-bottom:26px}
+.planos{display:flex;flex-wrap:wrap;gap:10px}.planos p{margin:0;background:white;border-left:4px solid var(--vermelho);padding:12px 15px;flex:1 1 190px}
+.quiz{padding-top:10px;padding-bottom:55px}
+.sub{margin-top:-5px;color:#555}
+.quiz-caixa{background:white;border:1px solid #d1caca;padding:20px;max-width:720px}
+.progresso{display:flex;justify-content:space-between;font-size:14px;font-weight:bold}
+.barra{height:8px;background:#e4e4e4;margin:10px 0 18px}.barra div{height:100%;width:16.6%;background:var(--vermelho);transition:width .2s}
+.quiz-caixa h3{font-size:21px;margin:12px 0}
+.respostas{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.resposta{background:#f1eeee;border:1px solid #ccc;padding:11px;text-align:left;border-radius:3px;color:#222}
+.resposta:hover:not(:disabled){border-color:var(--vermelho);background:#ffe8ec}
+.resposta:disabled{cursor:default}.resposta.certa{background:#d8f0dc;border:1px solid #31834a}.resposta.errada{background:#ffd9df;border:1px solid #c8102e}
+#feedback{min-height:22px;color:var(--vermelho2);font-weight:bold}
+.proxima{float:right}.proxima:disabled{opacity:.45;cursor:not-allowed}
+body.light{--fundo:#fff;--texto:#171717}
+body.light .sobre,body.light .gostos,body.light .quiz{background:#fff}
+#explosion{display:none;position:fixed;inset:0;z-index:99;background:#090909;color:white;align-items:center;justify-content:center;flex-direction:column;text-align:center}
+#explosion.ativa{display:flex;animation:shake .12s linear 7}
+.boom{font-size:clamp(65px,15vw,150px);font-weight:1000;color:#ffcf33;text-shadow:7px 7px #e21d2f,-5px -5px #fff;animation:boom .8s ease-out}
+#explosion p{font-size:clamp(17px,3vw,28px);font-weight:bold}
+@keyframes boom{0%{transform:scale(.05) rotate(-20deg);opacity:0}60%{transform:scale(1.2) rotate(7deg)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translate(0)}25%{transform:translate(8px,-5px)}50%{transform:translate(-7px,5px)}75%{transform:translate(5px,4px)}}
+@media(max-width:650px){header{padding:0 5%;height:auto;min-height:62px;gap:12px}nav{gap:10px}nav a{font-size:12px}.inicio{padding:30px 7%;flex-direction:column-reverse;text-align:center;gap:20px}.foto-principal{width:210px;height:245px}.destaque{font-size:14px}.sobre,.gostos,.quiz{padding-left:7%;padding-right:7%}.respostas{grid-template-columns:1fr}.planos{flex-direction:column}}
